@@ -1,5 +1,6 @@
 package com.example.checkinghomework.ui.screens.home
 
+import android.graphics.drawable.AnimationDrawable
 import android.os.Bundle
 import android.view.View
 import com.example.checkinghomework.databinding.FragmentHomeBinding
@@ -12,12 +13,20 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         setViews()
+        setupAnimation()
     }
 
     private fun setViews() {
         binding.button.setOnClickListener {
             binding.button.setLoading(true)
         }
+    }
+
+    private fun setupAnimation() {
+        val animationDrawable = binding.homeLayout.background as AnimationDrawable
+        animationDrawable.setEnterFadeDuration(2500)
+        animationDrawable.setExitFadeDuration(5000)
+        animationDrawable.start()
     }
 
 }
