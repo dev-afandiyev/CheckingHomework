@@ -11,6 +11,13 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        setViews()
+    }
+
+    private fun setViews() {
+        binding.button.setOnClickListener {
+            binding.button.setLoading(true)
+        }
     }
 
 }

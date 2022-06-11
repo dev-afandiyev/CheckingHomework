@@ -13,4 +13,9 @@
         <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
     </style>
+
+    <style name="Widget.CustomButton" parent="">
+<!--        <item name="android:theme">@style/ThemeOverlay.Widget.Progress.Black</item>-->
+        <item name="android:background">@drawable/button_background</item>
+    </style>
 </resources>
