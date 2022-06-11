@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">CheckingHomework</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="open_login_screen">Open</string>
+</resources>
