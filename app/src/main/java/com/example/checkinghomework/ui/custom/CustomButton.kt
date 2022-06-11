@@ -56,7 +56,7 @@ class CustomButton @JvmOverloads constructor(
         }
     }
 
-    fun setText(text: String?) {
+    private fun setText(text: String?) {
         buttonTextView.text = text
     }
 
