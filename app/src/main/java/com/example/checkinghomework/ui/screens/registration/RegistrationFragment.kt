@@ -3,6 +3,7 @@ package com.example.checkinghomework.ui.screens.registration
 import android.graphics.drawable.AnimationDrawable
 import android.os.Bundle
 import android.view.View
+import com.example.checkinghomework.R
 import com.example.checkinghomework.databinding.FragmentRegistrationBinding
 import com.example.checkinghomework.ui.screens.base.BaseFragment
 import dagger.hilt.android.AndroidEntryPoint
@@ -22,7 +23,7 @@ class RegistrationFragment : BaseFragment<FragmentRegistrationBinding>() {
         }
 
         binding.logInTextButton.setOnClickListener {
-
+            navigator.open(R.id.loginFragment)
         }
     }
 

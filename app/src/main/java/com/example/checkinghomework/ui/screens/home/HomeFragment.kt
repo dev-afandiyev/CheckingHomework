@@ -3,6 +3,7 @@ package com.example.checkinghomework.ui.screens.home
 import android.graphics.drawable.AnimationDrawable
 import android.os.Bundle
 import android.view.View
+import com.example.checkinghomework.R
 import com.example.checkinghomework.databinding.FragmentHomeBinding
 import com.example.checkinghomework.ui.screens.base.BaseFragment
 import dagger.hilt.android.AndroidEntryPoint
@@ -18,6 +19,7 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>() {
 
         binding.button.setOnClickListener {
             binding.button.setLoading(true)
+            navigator.open(R.id.loginFragment)
         }
     }
 
