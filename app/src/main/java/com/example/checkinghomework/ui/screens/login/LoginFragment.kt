@@ -1,17 +1,18 @@
-package com.example.checkinghomework.ui.screens.home
+package com.example.checkinghomework.ui.screens.login
 
 import android.graphics.drawable.AnimationDrawable
 import android.os.Bundle
 import android.view.View
 import com.example.checkinghomework.R
-import com.example.checkinghomework.databinding.FragmentHomeBinding
+import com.example.checkinghomework.databinding.FragmentLoginBinding
 import com.example.checkinghomework.ui.screens.base.BaseFragment
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
-class HomeFragment : BaseFragment<FragmentHomeBinding>() {
+class LoginFragment : BaseFragment<FragmentLoginBinding>() {
 
-    override fun getViewBinding(): FragmentHomeBinding = FragmentHomeBinding.inflate(layoutInflater)
+    override fun getViewBinding(): FragmentLoginBinding =
+        FragmentLoginBinding.inflate(layoutInflater)
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -19,12 +20,15 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>() {
 
         binding.button.setOnClickListener {
             binding.button.setLoading(true)
-            navigator.open(R.id.loginFragment)
+        }
+
+        binding.signUpTextButton.setOnClickListener {
+            navigator.open(R.id.registrationFragment)
         }
     }
 
     private fun setupAnimation() {
-        val animationDrawable = binding.homeLayout.background as AnimationDrawable
+        val animationDrawable = binding.loginLayout.background as AnimationDrawable
         animationDrawable.setEnterFadeDuration(2500)
         animationDrawable.setExitFadeDuration(5000)
         animationDrawable.start()
