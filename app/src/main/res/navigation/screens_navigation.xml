@@ -3,12 +3,20 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/screens_navigation"
-    app:startDestination="@id/homeFragment">
+    app:startDestination="@id/registrationFragment">
 
     <fragment
         android:id="@+id/homeFragment"
         android:name="com.example.checkinghomework.ui.screens.home.HomeFragment"
         android:label="HomeFragment"
         tools:layout="@layout/fragment_home"/>
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.example.checkinghomework.ui.screens.login.LoginFragment"
+        android:label="LoginFragment" />
+    <fragment
+        android:id="@+id/registrationFragment"
+        android:name="com.example.checkinghomework.ui.screens.registration.RegistrationFragment"
+        android:label="RegistrationFragment" />
 
 </navigation>

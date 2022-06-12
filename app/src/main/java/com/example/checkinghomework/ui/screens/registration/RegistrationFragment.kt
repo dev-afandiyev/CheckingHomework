@@ -1,16 +1,17 @@
-package com.example.checkinghomework.ui.screens.home
+package com.example.checkinghomework.ui.screens.registration
 
 import android.graphics.drawable.AnimationDrawable
 import android.os.Bundle
 import android.view.View
-import com.example.checkinghomework.databinding.FragmentHomeBinding
+import com.example.checkinghomework.databinding.FragmentRegistrationBinding
 import com.example.checkinghomework.ui.screens.base.BaseFragment
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
-class HomeFragment : BaseFragment<FragmentHomeBinding>() {
+class RegistrationFragment : BaseFragment<FragmentRegistrationBinding>() {
 
-    override fun getViewBinding(): FragmentHomeBinding = FragmentHomeBinding.inflate(layoutInflater)
+    override fun getViewBinding(): FragmentRegistrationBinding =
+        FragmentRegistrationBinding.inflate(layoutInflater)
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -19,10 +20,14 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>() {
         binding.button.setOnClickListener {
             binding.button.setLoading(true)
         }
+
+        binding.logInTextButton.setOnClickListener {
+
+        }
     }
 
     private fun setupAnimation() {
-        val animationDrawable = binding.homeLayout.background as AnimationDrawable
+        val animationDrawable = binding.registrationLayout.background as AnimationDrawable
         animationDrawable.setEnterFadeDuration(2500)
         animationDrawable.setExitFadeDuration(5000)
         animationDrawable.start()

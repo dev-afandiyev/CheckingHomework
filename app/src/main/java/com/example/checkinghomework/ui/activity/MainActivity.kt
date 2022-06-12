@@ -5,6 +5,7 @@ import com.example.checkinghomework.databinding.ActivityMainBinding
 import com.example.checkinghomework.ui.activity.base.BaseActivity
 import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class MainActivity : BaseActivity<ActivityMainBinding>() {
 
     override fun getViewBinding(): ActivityMainBinding = ActivityMainBinding.inflate(layoutInflater)

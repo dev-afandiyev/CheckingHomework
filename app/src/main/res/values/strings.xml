@@ -2,4 +2,10 @@
     <string name="app_name">CheckingHomework</string>
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="open_login_screen">Open</string>
+    <string name="hint_username_input">Username</string>
+    <string name="hint_password_input">Password</string>
+    <string name="register_text">Don’t have an account?\n<u>Sign up</u></string>
+    <string name="hint_email_input">Email</string>
+    <string name="hint_password_again_input">Repeat password</string>
+    <string name="log_in_text">Already have an account?\n<u>Log in</u></string>
 </resources>
