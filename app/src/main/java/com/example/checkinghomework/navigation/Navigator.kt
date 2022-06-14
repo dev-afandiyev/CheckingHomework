@@ -16,16 +16,15 @@ class Navigator @Inject constructor() : INavigator {
         this.navController = navController
 
         navOptions = NavOptions.Builder()
-            .setEnterAnim(R.anim.slide_in)
+            .setEnterAnim(R.anim.slide_in_left)
             .setExitAnim(R.anim.fade_out)
             .setPopEnterAnim(R.anim.fade_in)
-            .setExitAnim(R.anim.slide_out)
+            .setPopExitAnim(R.anim.slide_out_right)
             .build()
     }
 
     override fun open(screen: Int) {
         try {
-//            navController?.navigate(screen)
             navController?.navigate(screen, null, navOptions)
         } catch (ex: IllegalArgumentException) {
             ex.printStackTrace()
