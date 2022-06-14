@@ -2,7 +2,6 @@ package com.example.checkinghomework.ui.screens.registration
 
 import android.graphics.drawable.AnimationDrawable
 import android.os.Bundle
-import android.util.Log
 import android.view.View
 import androidx.fragment.app.viewModels
 import com.example.checkinghomework.R
@@ -14,14 +13,10 @@ import dagger.hilt.android.AndroidEntryPoint
 @AndroidEntryPoint
 class RegistrationFragment : BaseFragment<FragmentRegistrationBinding>() {
 
-    companion object {
-        private const val TAG = "RegistrationFragment"
-    }
+    private val viewModel: RegistrationViewModel by viewModels()
 
     override fun getViewBinding(): FragmentRegistrationBinding =
         FragmentRegistrationBinding.inflate(layoutInflater)
-
-    private val viewModel: RegistrationViewModel by viewModels()
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -32,16 +27,13 @@ class RegistrationFragment : BaseFragment<FragmentRegistrationBinding>() {
     }
 
     private fun saveStateParam() {
-        viewModel.userState.observe(viewLifecycleOwner, {
+        viewModel.userState.observe(viewLifecycleOwner) {
             binding.nameInput.setText(it.username)
             binding.emailInput.setText(it.email)
             binding.passwordInput.setText(it.password)
-        })
+        }
     }
 
-    /**
-     * Do field validation
-     */
     private fun setupRegistration() {
         binding.button.setOnClickListener {
             binding.button.setLoading(true)

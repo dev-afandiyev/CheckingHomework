@@ -7,13 +7,13 @@ import dagger.hilt.android.lifecycle.HiltViewModel
 import javax.inject.Inject
 
 @HiltViewModel
-class RegistrationViewModel
-@Inject constructor(private val interactor: RegistrationInteractor)
-    : BaseViewModel() {
+class RegistrationViewModel @Inject constructor(
+    private val interactor: RegistrationInteractor
+) : BaseViewModel() {
 
     val userState = MutableLiveData<UserModel>()
 
-    fun insertParam(username: String, email: String, password: String){
+    fun insertParam(username: String, email: String, password: String) {
         interactor.insert(username, email, password)
     }
 

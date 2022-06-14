@@ -11,7 +11,8 @@ import dagger.hilt.android.AndroidEntryPoint
 @AndroidEntryPoint
 class HomeFragment : BaseFragment<FragmentHomeBinding>() {
 
-    override fun getViewBinding(): FragmentHomeBinding = FragmentHomeBinding.inflate(layoutInflater)
+    override fun getViewBinding(): FragmentHomeBinding =
+        FragmentHomeBinding.inflate(layoutInflater)
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)

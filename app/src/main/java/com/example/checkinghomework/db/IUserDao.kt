@@ -18,5 +18,4 @@ interface IUserDao {
     @Insert
     fun insert(usersModel: UserModel?)
 
-
 }
