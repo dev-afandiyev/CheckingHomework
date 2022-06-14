@@ -12,8 +12,7 @@ import javax.inject.Inject
 
 abstract class BaseFragment<VB : ViewBinding> : Fragment() {
 
-    @Inject
-    lateinit var navigator: Navigator
+    @Inject lateinit var navigator: Navigator
 
     private var _binding: VB? = null
     val binding get() = _binding!!

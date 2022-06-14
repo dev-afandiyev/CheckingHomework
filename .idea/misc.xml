@@ -3,16 +3,22 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/user/AndroidStudioProjects/CheckingHomework/app/src/main/res/drawable/bg_cardview.xml" value="0.2703125" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/CheckingHomework/app/src/main/res/drawable/bg_cardview_text_stroke.xml" value="0.2703125" />
         <entry key="..\:/Users/user/AndroidStudioProjects/CheckingHomework/app/src/main/res/drawable/gradient_list.xml" value="0.2703125" />
         <entry key="..\:/Users/user/AndroidStudioProjects/CheckingHomework/app/src/main/res/drawable/home_anim_background_one.xml" value="0.2703125" />
         <entry key="..\:/Users/user/AndroidStudioProjects/CheckingHomework/app/src/main/res/drawable/home_anim_background_three.xml" value="0.2703125" />
         <entry key="..\:/Users/user/AndroidStudioProjects/CheckingHomework/app/src/main/res/drawable/home_anim_background_two.xml" value="0.2703125" />
         <entry key="..\:/Users/user/AndroidStudioProjects/CheckingHomework/app/src/main/res/drawable/ic_checking.xml" value="0.2703125" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/CheckingHomework/app/src/main/res/drawable/red_cursor.xml" value="0.2703125" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/CheckingHomework/app/src/main/res/drawable/text_background.xml" value="0.2703125" />
         <entry key="..\:/Users/user/AndroidStudioProjects/CheckingHomework/app/src/main/res/layout/activity_main.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/user/AndroidStudioProjects/CheckingHomework/app/src/main/res/layout/custom_button_layout.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/user/AndroidStudioProjects/CheckingHomework/app/src/main/res/layout/fragment_home.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/user/AndroidStudioProjects/CheckingHomework/app/src/main/res/layout/fragment_login.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/CheckingHomework/app/src/main/res/layout/fragment_profile.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/user/AndroidStudioProjects/CheckingHomework/app/src/main/res/layout/fragment_registration.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/CheckingHomework/app/src/main/res/layout/profile_item.xml" value="0.25416666666666665" />
       </map>
     </option>
   </component>

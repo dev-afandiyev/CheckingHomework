@@ -8,4 +8,7 @@
     <string name="hint_email_input">Email</string>
     <string name="hint_password_again_input">Repeat password</string>
     <string name="log_in_text">Already have an account?\n<u>Log in</u></string>
+    <string name="item_news">News</string>
+    <string name="item_videos">Videos</string>
+    <string name="item_chat">Chat</string>
 </resources>

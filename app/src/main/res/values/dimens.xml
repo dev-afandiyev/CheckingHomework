@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <dimen name="margin_padding_0">0dp</dimen>
+    <dimen name="margin_padding_2">2dp</dimen>
+    <dimen name="margin_padding_4">4dp</dimen>
+    <dimen name="margin_padding_6">6dp</dimen>
+    <dimen name="margin_padding_8">8dp</dimen>
+    <dimen name="margin_padding_10">10dp</dimen>
+    <dimen name="margin_padding_12">12dp</dimen>
+    <dimen name="margin_padding_14">14dp</dimen>
+    <dimen name="margin_padding_16">16dp</dimen>
+    <dimen name="margin_padding_18">18dp</dimen>
+    <dimen name="margin_padding_20">20dp</dimen>
+    <dimen name="margin_padding_22">22dp</dimen>
+    <dimen name="margin_padding_24">24dp</dimen>
+    <dimen name="margin_padding_26">26dp</dimen>
+    <dimen name="margin_padding_28">28dp</dimen>
+    <dimen name="margin_padding_30">30dp</dimen>
+    <dimen name="margin_padding_32">32dp</dimen>
+    <dimen name="margin_padding_34">34dp</dimen>
+    <dimen name="margin_padding_36">36dp</dimen>
+    <dimen name="margin_padding_38">38dp</dimen>
+    <dimen name="margin_padding_40">40dp</dimen>
+    <dimen name="margin_padding_42">42dp</dimen>
+    <dimen name="margin_padding_44">44dp</dimen>
+    <dimen name="margin_padding_46">46dp</dimen>
+    <dimen name="margin_padding_48">48dp</dimen>
+    <dimen name="margin_padding_50">50dp</dimen>
+    <dimen name="margin_padding_52">52dp</dimen>
+    <dimen name="margin_padding_54">54dp</dimen>
+    <dimen name="margin_padding_56">56dp</dimen>
+    <dimen name="margin_padding_60">60dp</dimen>
+    <dimen name="margin_padding_176">175dp</dimen>
+    <dimen name="margin_padding_350">350dp</dimen>
+
+</resources>
