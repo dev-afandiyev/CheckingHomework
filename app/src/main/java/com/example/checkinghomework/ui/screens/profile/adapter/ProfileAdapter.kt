@@ -58,6 +58,7 @@ class ProfileAdapter @Inject constructor() : RecyclerView.Adapter<ProfileAdapter
         if (row == position) {
             holder.cardView.elevation = 0F
             holder.cardView.setBackgroundResource(R.drawable.bg_cardview_text_stroke)
+            holder.cardView.isClickable = false
         } else {
             holder.cardView.elevation = 0F
             holder.cardView.setBackgroundResource(R.drawable.bg_cardview)

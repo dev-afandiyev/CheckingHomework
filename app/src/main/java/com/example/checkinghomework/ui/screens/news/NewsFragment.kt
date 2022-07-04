@@ -10,7 +10,6 @@ import com.example.checkinghomework.ui.screens.base.BaseFragment
 import com.example.checkinghomework.ui.screens.news.adapter.NewsAdapter
 import com.example.checkinghomework.viewmodel.NewsViewModel
 import dagger.hilt.android.AndroidEntryPoint
-import javax.inject.Inject
 
 @AndroidEntryPoint
 class NewsFragment : BaseFragment<FragmentNewsBinding>() {
@@ -46,6 +45,11 @@ class NewsFragment : BaseFragment<FragmentNewsBinding>() {
         newsAdapter?.onClickListener {
 
         }
+    }
+
+    override fun onPause() {
+        super.onPause()
+        Log.d("PAUSE", "onPause: ")
     }
 
     override fun onDestroyView() {

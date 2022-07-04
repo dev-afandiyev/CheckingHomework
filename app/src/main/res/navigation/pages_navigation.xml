@@ -1,20 +1,68 @@
 <?xml version="1.0" encoding="utf-8"?>
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/pages_navigation"
     app:startDestination="@id/newsFragment">
 
     <fragment
         android:id="@+id/newsFragment"
         android:name="com.example.checkinghomework.ui.screens.news.NewsFragment"
-        android:label="NewsFragment" />
+        android:label="NewsFragment"
+        app:launchSingleTop="true"
+        tools:layout="@layout/fragment_news">
+        <action
+            android:id="@+id/action_newsFragment_to_videosFragment"
+            app:destination="@id/videosFragment"
+            app:launchSingleTop="true"
+            app:popUpTo="@+id/videosFragment"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_newsFragment_to_chatFragment2"
+            app:destination="@id/chatFragment"
+            app:launchSingleTop="true"
+            app:popUpTo="@+id/chatFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+
     <fragment
         android:id="@+id/videosFragment"
         android:name="com.example.checkinghomework.ui.screens.videos.VideosFragment"
-        android:label="VideosFragment" >
+        android:label="VideosFragment"
+        app:launchSingleTop="true"
+        tools:layout="@layout/fragment_videos">
         <action
             android:id="@+id/action_videosFragment_to_newsFragment"
-            app:destination="@id/newsFragment" />
+            app:destination="@id/newsFragment"
+            app:launchSingleTop="true"
+            app:popUpTo="@+id/newsFragment"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_videosFragment_to_chatFragment"
+            app:destination="@id/chatFragment"
+            app:launchSingleTop="true"
+            app:popUpTo="@+id/chatFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/chatFragment"
+        android:name="com.example.checkinghomework.ui.screens.chat.ChatFragment"
+        android:label="ChatFragment"
+        app:launchSingleTop="true"
+        tools:layout="@layout/fragment_chat">
+        <action
+            android:id="@+id/action_chatFragment_to_videosFragment"
+            app:destination="@id/videosFragment"
+            app:launchSingleTop="true"
+            app:popUpTo="@+id/videosFragment"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_chatFragment_to_newsFragment"
+            app:destination="@id/newsFragment"
+            app:launchSingleTop="true"
+            app:popUpTo="@+id/newsFragment"
+            app:popUpToInclusive="true" />
     </fragment>
 
 </navigation>
