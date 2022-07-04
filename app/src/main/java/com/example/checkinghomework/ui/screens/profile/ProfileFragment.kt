@@ -14,12 +14,12 @@ import javax.inject.Inject
 @AndroidEntryPoint
 class ProfileFragment : BaseFragment<FragmentProfileBinding>() {
 
+    @Inject
+    lateinit var profileAdapter: ProfileAdapter
+    private val viewModel: ProfileViewModel by viewModels()
+
     override fun getViewBinding(): FragmentProfileBinding =
         FragmentProfileBinding.inflate(layoutInflater)
-
-    @Inject lateinit var profileAdapter: ProfileAdapter
-
-    private val viewModel: ProfileViewModel by viewModels()
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -29,8 +29,11 @@ class ProfileFragment : BaseFragment<FragmentProfileBinding>() {
 
     private fun initAdapter() {
         profileAdapter = ProfileAdapter()
-        binding.profileSelection.layoutManager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
+        binding.profileSelection.layoutManager =
+            LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
         binding.profileSelection.adapter = profileAdapter
+
+        profileAdapter.setOnItemClickListener {}
     }
 
 }

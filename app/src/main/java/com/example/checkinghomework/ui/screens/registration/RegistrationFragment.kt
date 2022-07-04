@@ -23,7 +23,7 @@ class RegistrationFragment : BaseFragment<FragmentRegistrationBinding>() {
         setupAnimation()
         saveStateParam()
         setupRegistration()
-        setupLogInText()
+        setupLogInButton()
     }
 
     private fun saveStateParam() {
@@ -46,7 +46,7 @@ class RegistrationFragment : BaseFragment<FragmentRegistrationBinding>() {
         }
     }
 
-    private fun setupLogInText() {
+    private fun setupLogInButton() {
         binding.logInTextButton.setOnClickListener {
             navigator.open(R.id.loginFragment)
         }

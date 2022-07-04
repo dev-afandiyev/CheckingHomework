@@ -1,6 +1,6 @@
 package com.example.checkinghomework.domain
 
-import com.example.checkinghomework.data.local.RegistrationRepository
+import com.example.checkinghomework.data.repository.registration.RegistrationRepository
 import com.example.checkinghomework.model.UserModel
 import javax.inject.Inject
 

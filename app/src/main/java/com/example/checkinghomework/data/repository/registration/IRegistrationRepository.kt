@@ -1,4 +1,4 @@
-package com.example.checkinghomework.data.local
+package com.example.checkinghomework.data.repository.registration
 
 import com.example.checkinghomework.model.UserModel
 
