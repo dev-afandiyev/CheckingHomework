@@ -20,14 +20,16 @@ class NewsViewModel @Inject constructor(
     }
 
     fun apiRequest() {
-        val result = newsRepository.request()
-            .subscribe({
-                if (it.status == "ok") {
-                    newsList.postValue(it.articles)
-                }
-            }, {
-                Log.e("RequestError", it.message.toString())
-            })
+        if (newsList.value == null) {
+            val result = newsRepository.request()
+                .subscribe({
+                    if (it.status == "ok") {
+                        newsList.postValue(it.articles)
+                    }
+                }, {
+                    Log.e("RequestError", it.message.toString())
+                })
+        }
     }
 
 }

@@ -11,8 +11,7 @@ import com.example.checkinghomework.model.ArticleModel
 import javax.inject.Inject
 import javax.inject.Singleton
 
-@Singleton
-class NewsAdapter @Inject constructor() : RecyclerView.Adapter<NewsAdapter.ViewHolder>() {
+class NewsAdapter : RecyclerView.Adapter<NewsAdapter.ViewHolder>() {
 
     private var list = mutableListOf<ArticleModel>()
     private var onClickListener: (Int) -> Unit = {}

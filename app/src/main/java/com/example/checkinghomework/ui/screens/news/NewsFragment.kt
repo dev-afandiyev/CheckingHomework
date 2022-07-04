@@ -1,6 +1,7 @@
 package com.example.checkinghomework.ui.screens.news
 
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -14,9 +15,8 @@ import javax.inject.Inject
 @AndroidEntryPoint
 class NewsFragment : BaseFragment<FragmentNewsBinding>() {
 
-    @Inject
-    lateinit var newsAdapter: NewsAdapter
     private val viewModel: NewsViewModel by viewModels()
+    private var newsAdapter: NewsAdapter? = null
 
     override fun getViewBinding() =
         FragmentNewsBinding.inflate(layoutInflater)
@@ -32,7 +32,7 @@ class NewsFragment : BaseFragment<FragmentNewsBinding>() {
 
         viewModel.getNewsLiveData().observe(viewLifecycleOwner) {
             it?.let {
-                newsAdapter.initAdapter(it)
+                newsAdapter?.initAdapter(it)
                 binding.progressBar.visibility = View.GONE
             }
         }
@@ -43,7 +43,16 @@ class NewsFragment : BaseFragment<FragmentNewsBinding>() {
         binding.newsList.layoutManager = LinearLayoutManager(requireContext())
         binding.newsList.adapter = newsAdapter
 
-        newsAdapter.onClickListener {}
+        newsAdapter?.onClickListener {
+
+        }
+    }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        binding.newsList.removeAllViews()
+        binding.newsLayout.removeAllViews()
+        binding.newsLayout.removeAllViewsInLayout()
     }
 
 }

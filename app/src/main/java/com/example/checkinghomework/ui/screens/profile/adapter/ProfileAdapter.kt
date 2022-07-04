@@ -48,11 +48,13 @@ class ProfileAdapter @Inject constructor() : RecyclerView.Adapter<ProfileAdapter
 
     @SuppressLint("NotifyDataSetChanged")
     private fun setCardViewAction(holder: ViewHolder, position: Int) {
+
         holder.cardView.setOnClickListener {
             onItemClickListener?.let { it1 -> it1(position) }
             row = position
             notifyDataSetChanged()
         }
+
         if (row == position) {
             holder.cardView.elevation = 0F
             holder.cardView.setBackgroundResource(R.drawable.bg_cardview_text_stroke)
