@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.View
 import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.checkinghomework.R
 import com.example.checkinghomework.databinding.FragmentNewsBinding
 import com.example.checkinghomework.ui.screens.base.BaseFragment
 import com.example.checkinghomework.ui.screens.news.adapter.NewsAdapter
@@ -42,7 +43,7 @@ class NewsFragment : BaseFragment<FragmentNewsBinding>() {
         binding.newsList.adapter = newsAdapter
 
         newsAdapter?.onClickListener {
-
+            navigator.open(R.id.loginFragment)
         }
     }
 

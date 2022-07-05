@@ -4,13 +4,14 @@ import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import com.example.checkinghomework.data.repository.news.NewsRepository
+import com.example.checkinghomework.domain.NewsInteractor
 import com.example.checkinghomework.model.ArticleModel
 import dagger.hilt.android.lifecycle.HiltViewModel
 import javax.inject.Inject
 
 @HiltViewModel
 class NewsViewModel @Inject constructor(
-    private val newsRepository: NewsRepository
+    private val interactor: NewsInteractor
 ) : BaseViewModel() {
 
     private val newsList = MutableLiveData<ArrayList<ArticleModel>>()
@@ -21,7 +22,7 @@ class NewsViewModel @Inject constructor(
 
     fun apiRequest() {
         if (newsList.value == null) {
-            val result = newsRepository.request()
+            val result = interactor.request()
                 .subscribe({
                     if (it.status == "ok") {
                         newsList.postValue(it.articles)

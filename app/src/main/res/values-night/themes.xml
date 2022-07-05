@@ -17,4 +17,9 @@
     <style name="Widget.CustomButton" parent="">
         <item name="android:background">@drawable/button_background</item>
     </style>
+
+    <style name="tab_text" parent="@android:style/TextAppearance.Widget.TabWidget">
+        <item name="android:fontFamily">@font/inter_semibold</item>
+    </style>
+
 </resources>
