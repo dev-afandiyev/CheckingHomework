@@ -13,7 +13,8 @@ class NewsRepository @Inject constructor(
 ) {
 
     fun request(): Single<ResponseModel> {
-        return api.dataRequest("bbc-news", API_KEY).retry()
+        return api.dataRequest("bbc-news", API_KEY)
+            .retry()
             .subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())
     }

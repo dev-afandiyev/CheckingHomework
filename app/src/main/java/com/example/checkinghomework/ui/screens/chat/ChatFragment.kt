@@ -17,4 +17,9 @@ class ChatFragment : BaseFragment<FragmentChatBinding>() {
 
     }
 
+    override fun onPause() {
+        super.onPause()
+        clearBinding()
+    }
+
 }

@@ -17,4 +17,9 @@ class VideosFragment : BaseFragment<FragmentVideosBinding>() {
 
     }
 
+    override fun onPause() {
+        super.onPause()
+        clearBinding()
+    }
+
 }

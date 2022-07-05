@@ -1,7 +1,6 @@
 package com.example.checkinghomework.ui.screens.news
 
 import android.os.Bundle
-import android.util.Log
 import android.view.View
 import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -49,14 +48,8 @@ class NewsFragment : BaseFragment<FragmentNewsBinding>() {
 
     override fun onPause() {
         super.onPause()
-        Log.d("PAUSE", "onPause: ")
-    }
-
-    override fun onDestroyView() {
-        super.onDestroyView()
-        binding.newsList.removeAllViews()
-        binding.newsLayout.removeAllViews()
-        binding.newsLayout.removeAllViewsInLayout()
+        newsAdapter = null
+        clearBinding()
     }
 
 }

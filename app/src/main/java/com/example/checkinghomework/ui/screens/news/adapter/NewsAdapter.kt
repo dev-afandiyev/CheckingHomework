@@ -8,8 +8,6 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.checkinghomework.R
 import com.example.checkinghomework.model.ArticleModel
-import javax.inject.Inject
-import javax.inject.Singleton
 
 class NewsAdapter : RecyclerView.Adapter<NewsAdapter.ViewHolder>() {
 
