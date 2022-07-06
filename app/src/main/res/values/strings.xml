@@ -11,4 +11,7 @@
     <string name="item_news">News</string>
     <string name="item_videos">Videos</string>
     <string name="item_chat">Chat</string>
+
+    <string name="navigation_drawer_open">Open</string>
+    <string name="navigation_drawer_close">Close</string>
 </resources>

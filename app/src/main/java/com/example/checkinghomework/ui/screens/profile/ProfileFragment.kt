@@ -3,8 +3,11 @@ package com.example.checkinghomework.ui.screens.profile
 import android.os.Bundle
 import android.view.View
 import androidx.activity.addCallback
+import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.fragment.app.viewModels
+import com.example.checkinghomework.R
 import com.example.checkinghomework.databinding.FragmentProfileBinding
+import com.example.checkinghomework.ui.activity.MainActivity
 import com.example.checkinghomework.ui.screens.base.BaseFragment
 import com.example.checkinghomework.ui.screens.profile.viewpager.ViewPagerAdapter
 import com.example.checkinghomework.viewmodel.ProfileViewModel
@@ -23,7 +26,19 @@ class ProfileFragment : BaseFragment<FragmentProfileBinding>() {
         super.onViewCreated(view, savedInstanceState)
         setViewPager()
         setTabLayout()
+        setToolbar()
+        setSideBarNavigation()
         setOnBackPressed()
+    }
+
+    // TODO: fix
+    private fun setSideBarNavigation() {
+        binding.navView.setNavigationItemSelectedListener {
+            when (it.itemId) {
+                R.id.nav_info -> navigator.open(R.id.loginFragment)
+            }
+            true
+        }
     }
 
     // TODO: fix
@@ -42,6 +57,21 @@ class ProfileFragment : BaseFragment<FragmentProfileBinding>() {
         ) { tab, position ->
             tab.text = viewModel.setTabTitle(position)
         }.attach()
+    }
+
+    private fun setToolbar() {
+        (requireActivity() as MainActivity).setSupportActionBar(binding.toolbar)
+
+        val toggle = ActionBarDrawerToggle(
+            requireActivity(),
+            binding.drawer,
+            binding.toolbar,
+            R.string.navigation_drawer_open,
+            R.string.navigation_drawer_close
+        )
+
+        binding.drawer.addDrawerListener(toggle)
+        toggle.syncState()
     }
 
     private fun setViewPager() {
