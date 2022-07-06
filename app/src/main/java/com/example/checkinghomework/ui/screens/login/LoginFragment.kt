@@ -6,7 +6,6 @@ import android.view.View
 import com.example.checkinghomework.R
 import com.example.checkinghomework.databinding.FragmentLoginBinding
 import com.example.checkinghomework.ui.screens.base.BaseFragment
-import com.example.checkinghomework.viewmodel.ProfileViewModel
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -27,6 +26,11 @@ class LoginFragment : BaseFragment<FragmentLoginBinding>() {
         binding.signUpTextButton.setOnClickListener {
             navigator.open(R.id.registrationFragment)
         }
+    }
+
+    override fun onPause() {
+        super.onPause()
+        clearBinding()
     }
 
     private fun setupAnimation() {

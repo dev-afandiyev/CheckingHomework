@@ -3,6 +3,7 @@ package com.example.checkinghomework.ui.screens.registration
 import android.graphics.drawable.AnimationDrawable
 import android.os.Bundle
 import android.view.View
+import android.widget.Toast
 import androidx.fragment.app.viewModels
 import com.example.checkinghomework.R
 import com.example.checkinghomework.databinding.FragmentRegistrationBinding
@@ -21,19 +22,11 @@ class RegistrationFragment : BaseFragment<FragmentRegistrationBinding>() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         setupAnimation()
-        saveStateParam()
         setupRegistration()
         setupLogInButton()
     }
 
-    private fun saveStateParam() {
-        viewModel.userState.observe(viewLifecycleOwner) {
-            binding.nameInput.setText(it.username)
-            binding.emailInput.setText(it.email)
-            binding.passwordInput.setText(it.password)
-        }
-    }
-
+    // TODO: do form validation
     private fun setupRegistration() {
         binding.button.setOnClickListener {
             binding.button.setLoading(true)
@@ -42,7 +35,7 @@ class RegistrationFragment : BaseFragment<FragmentRegistrationBinding>() {
                 binding.emailInput.text.toString(),
                 binding.passwordInput.text.toString(),
             )
-            navigator.open(R.id.loginFragment)
+            navigator.open(R.id.profileFragment)
         }
     }
 
@@ -57,6 +50,11 @@ class RegistrationFragment : BaseFragment<FragmentRegistrationBinding>() {
         animationDrawable.setEnterFadeDuration(2500)
         animationDrawable.setExitFadeDuration(5000)
         animationDrawable.start()
+    }
+
+    override fun onPause() {
+        super.onPause()
+        clearBinding()
     }
 
 }
