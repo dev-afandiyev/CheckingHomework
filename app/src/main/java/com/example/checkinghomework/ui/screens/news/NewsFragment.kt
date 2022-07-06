@@ -1,15 +1,18 @@
 package com.example.checkinghomework.ui.screens.news
 
 import android.os.Bundle
+import android.view.MotionEvent
 import android.view.View
+import android.view.View.OnTouchListener
+import android.widget.Toolbar
 import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.checkinghomework.R
 import com.example.checkinghomework.databinding.FragmentNewsBinding
 import com.example.checkinghomework.ui.screens.base.BaseFragment
 import com.example.checkinghomework.ui.screens.news.adapter.NewsAdapter
 import com.example.checkinghomework.viewmodel.NewsViewModel
 import dagger.hilt.android.AndroidEntryPoint
+
 
 @AndroidEntryPoint
 class NewsFragment : BaseFragment<FragmentNewsBinding>() {
@@ -43,7 +46,7 @@ class NewsFragment : BaseFragment<FragmentNewsBinding>() {
         binding.newsList.adapter = newsAdapter
 
         newsAdapter?.onClickListener {
-            navigator.open(R.id.loginFragment)
+
         }
     }
 
