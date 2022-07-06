@@ -45,7 +45,7 @@ abstract class BaseFragment<VB : ViewBinding> : Fragment() {
     }
 
     fun clearBinding() {
-        _binding = null
+//        _binding = null
     }
 
 }
