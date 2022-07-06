@@ -10,9 +10,9 @@ import javax.inject.Inject
 
 class NewsRepository @Inject constructor(
     private val api: IRetrofitApi
-) {
+) : INewsRepository {
 
-    fun request(): Single<ResponseModel> {
+    override fun request(): Single<ResponseModel> {
         return api.dataRequest("bbc-news", API_KEY)
             .retry()
             .subscribeOn(Schedulers.io())

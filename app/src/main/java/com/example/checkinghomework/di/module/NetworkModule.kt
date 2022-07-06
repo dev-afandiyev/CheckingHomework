@@ -34,12 +34,4 @@ object NetworkModule {
             .create(IRetrofitApi::class.java)
     }
 
-    @ViewModelScoped
-    @Provides
-    fun provideNewsRepository(
-        api: IRetrofitApi
-    ): NewsRepository {
-        return NewsRepository(api)
-    }
-
 }

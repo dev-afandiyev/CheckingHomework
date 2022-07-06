@@ -1,26 +1,21 @@
 package com.example.checkinghomework.viewmodel
 
-import androidx.lifecycle.MutableLiveData
-import com.example.checkinghomework.model.ProfileModel
+import com.example.checkinghomework.constants.NavigationConstants.CHAT_SCREEN
+import com.example.checkinghomework.constants.NavigationConstants.NEWS_SCREEN
+import com.example.checkinghomework.constants.NavigationConstants.VIDEOS_SCREEN
 import dagger.hilt.android.lifecycle.HiltViewModel
 import javax.inject.Inject
 
 @HiltViewModel
 class ProfileViewModel @Inject constructor() : BaseViewModel() {
 
-    val profileLiveData = MutableLiveData<List<ProfileModel>>()
-
-    private val list = mutableListOf<ProfileModel>()
-
-    fun getItem() : List<ProfileModel> {
-        list.add(ProfileModel("News"))
-        list.add(ProfileModel("Videos"))
-        list.add(ProfileModel("Chat"))
-        return list
-    }
-
-    fun setList() {
-        profileLiveData.value = getItem()
+    fun setTabTitle(i: Int): String {
+        return when (i) {
+            NEWS_SCREEN -> "News"
+            VIDEOS_SCREEN -> "Videos"
+            CHAT_SCREEN -> "Chat"
+            else -> "View"
+        }
     }
 
 }
