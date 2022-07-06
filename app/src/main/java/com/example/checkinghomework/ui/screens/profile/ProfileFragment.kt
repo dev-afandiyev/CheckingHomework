@@ -30,14 +30,12 @@ class ProfileFragment : BaseFragment<FragmentProfileBinding>() {
         setToolbar()
         setSideBarNavigation()
         setOnBackPressed()
-
         setUserData()
     }
 
     private fun setUserData() {
         viewModel.getAllItem()?.observe(viewLifecycleOwner) {
             it?.let {
-                binding.toolbar.title = it.username
                 setSideBarData(it.username, it.email)
             }
         }
@@ -45,8 +43,12 @@ class ProfileFragment : BaseFragment<FragmentProfileBinding>() {
 
     private fun setSideBarData(name: String, email: String) {
         val sideBarHeader = binding.navView.getHeaderView(0)
-        sideBarHeader.findViewById<TextView>(R.id.sidebar_name).also { it.text = name }
-        sideBarHeader.findViewById<TextView>(R.id.sidebar_email).also { it.text = email }
+        sideBarHeader.findViewById<TextView>(R.id.sidebar_name).also {
+            it.text = name
+        }
+        sideBarHeader.findViewById<TextView>(R.id.sidebar_email).also {
+            it.text = email
+        }
     }
 
     // TODO: fix

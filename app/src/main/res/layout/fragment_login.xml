@@ -38,7 +38,7 @@
                 tools:ignore="Autofill,RtlSymmetry" />
 
             <EditText
-                android:id="@+id/last_name_input"
+                android:id="@+id/password"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="30dp"

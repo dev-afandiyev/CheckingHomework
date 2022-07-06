@@ -13,8 +13,8 @@ interface IUserDao {
     @Query("SELECT * FROM user_table")
     fun getAllItem(): LiveData<UserModel?>?
 
-    @Query("SELECT * FROM user_table where email = :email and password = :pass")
-    fun getByLogin(email: String?, pass: String?): UserModel?
+    @Query("SELECT * FROM user_table where username = :username and password = :pass")
+    fun getByLogin(username: String?, pass: String?): UserModel?
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     fun insert(usersModel: UserModel?)

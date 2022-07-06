@@ -1,37 +1,40 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:background="@color/dark"
-    android:gravity="bottom"
-    android:orientation="vertical"
-    android:padding="16dp">
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <com.google.android.material.imageview.ShapeableImageView
-        android:id="@+id/sidebar_image"
-        android:layout_width="70dp"
-        android:layout_height="70dp"
-        android:src="@mipmap/ic_launcher_round"
-        app:shapeAppearanceOverlay="@style/item_corners" />
-
-    <TextView
-        android:id="@+id/sidebar_name"
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:fontFamily="@font/inter_semibold"
-        android:paddingTop="8dp"
-        android:text="CheckingHomework"
-        android:textColor="@color/light_gray"
-        android:textSize="16sp" />
+        android:background="@color/dark"
+        android:gravity="bottom"
+        android:orientation="vertical"
+        android:padding="16dp">
 
-    <TextView
-        android:id="@+id/sidebar_email"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:fontFamily="@font/inter_semibold"
-        android:text="example@gmail.com"
-        android:textColor="@color/light_gray"
-        android:textSize="12sp" />
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/sidebar_image"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:src="@mipmap/ic_launcher_round"
+            app:shapeAppearanceOverlay="@style/item_corners" />
 
-</LinearLayout>
+        <TextView
+            android:id="@+id/sidebar_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/inter_semibold"
+            android:paddingTop="8dp"
+            android:text="CheckingHomework"
+            android:textColor="@color/light_gray"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/sidebar_email"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/inter_semibold"
+            android:text="example@gmail.com"
+            android:textColor="@color/light_gray"
+            android:textSize="12sp" />
+
+    </LinearLayout>
+</layout>
