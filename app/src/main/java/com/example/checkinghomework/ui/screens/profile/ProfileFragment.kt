@@ -9,19 +9,22 @@ import androidx.fragment.app.viewModels
 import com.example.checkinghomework.R
 import com.example.checkinghomework.databinding.FragmentProfileBinding
 import com.example.checkinghomework.ui.activity.MainActivity
+import com.example.checkinghomework.ui.custom.CustomAlertDialog
 import com.example.checkinghomework.ui.screens.base.BaseFragment
 import com.example.checkinghomework.ui.screens.profile.viewpager.ViewPagerAdapter
 import com.example.checkinghomework.viewmodel.ProfileViewModel
 import com.google.android.material.tabs.TabLayoutMediator
 import dagger.hilt.android.AndroidEntryPoint
+import javax.inject.Inject
 
 @AndroidEntryPoint
 class ProfileFragment : BaseFragment<FragmentProfileBinding>() {
 
-    private val viewModel: ProfileViewModel by viewModels()
-
     override fun getViewBinding(): FragmentProfileBinding =
         FragmentProfileBinding.inflate(layoutInflater)
+
+    private val viewModel: ProfileViewModel by viewModels()
+    @Inject lateinit var alert: CustomAlertDialog
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -55,7 +58,7 @@ class ProfileFragment : BaseFragment<FragmentProfileBinding>() {
     private fun setSideBarNavigation() {
         binding.navView.setNavigationItemSelectedListener {
             when (it.itemId) {
-                R.id.nav_info -> navigator.open(R.id.loginFragment)
+                R.id.nav_info -> alert.showDialog(this)
             }
             true
         }
