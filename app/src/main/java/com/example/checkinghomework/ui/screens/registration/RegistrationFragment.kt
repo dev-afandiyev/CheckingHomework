@@ -35,7 +35,7 @@ class RegistrationFragment : BaseFragment<FragmentRegistrationBinding>() {
                 binding.emailInput.text.toString(),
                 binding.passwordInput.text.toString(),
             )
-            navigator.open(R.id.loginFragment)
+            navigator.open(R.id.profileFragment)
         }
     }
 

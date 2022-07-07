@@ -5,6 +5,7 @@ import android.view.View
 import android.widget.TextView
 import androidx.activity.addCallback
 import androidx.appcompat.app.ActionBarDrawerToggle
+import androidx.core.view.GravityCompat
 import androidx.fragment.app.viewModels
 import com.example.checkinghomework.R
 import com.example.checkinghomework.databinding.FragmentProfileBinding
@@ -32,9 +33,25 @@ class ProfileFragment : BaseFragment<FragmentProfileBinding>() {
         setViewPager()
         setTabLayout()
         setToolbar()
-        setSideBarNavigation()
+        setDrawerNavigation()
         setOnBackPressed()
         setUserData()
+        setDrawerEdgeSize()
+    }
+
+    private fun setDrawerEdgeSize() {
+        val mDragField = binding.drawer
+            .javaClass
+            .getDeclaredField("mLeftDragger")
+            .also { it.isAccessible = true }
+
+        val drawerLayout = mDragField.get(binding.drawer)
+        val mEdgeSizeField = drawerLayout
+            .javaClass
+            .getDeclaredField("mEdgeSize")
+            .also { it.isAccessible = true }
+
+        mEdgeSizeField.setInt(drawerLayout, mEdgeSizeField.getInt(drawerLayout) * 6)
     }
 
     private fun setUserData() {
@@ -55,13 +72,15 @@ class ProfileFragment : BaseFragment<FragmentProfileBinding>() {
         }
     }
 
-    // TODO: fix
-    private fun setSideBarNavigation() {
+    private fun setDrawerNavigation() {
         binding.navView.setNavigationItemSelectedListener {
             when (it.itemId) {
+                R.id.nav_main -> binding.drawer.closeDrawer(GravityCompat.START)
+                R.id.nav_settings -> navigator.open(R.id.settingsFragment)
                 R.id.nav_info -> alert.showDialog(this)
             }
-            true
+            binding.drawer.closeDrawer(GravityCompat.START)
+            false
         }
     }
 
@@ -100,10 +119,7 @@ class ProfileFragment : BaseFragment<FragmentProfileBinding>() {
 
     private fun setViewPager() {
         binding.viewPager.adapter =
-            ViewPagerAdapter(
-                childFragmentManager,
-                lifecycle
-            )
+            ViewPagerAdapter(childFragmentManager, lifecycle)
     }
 
     override fun onDestroyView() {
