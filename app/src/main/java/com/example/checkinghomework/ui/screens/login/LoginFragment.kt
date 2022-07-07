@@ -22,17 +22,17 @@ class LoginFragment : BaseFragment<FragmentLoginBinding>() {
         super.onViewCreated(view, savedInstanceState)
         setupAnimation()
 
-        viewModel.logPassState.observe(viewLifecycleOwner, {
+        viewModel.logPassState.observe(viewLifecycleOwner) {
             binding.nameInput.setText(it.email)
             binding.password.setText(it.password)
-        })
+        }
 
         binding.button.setOnClickListener {
             val userName = binding.nameInput.text.toString()
             val password = binding.password.text.toString()
 
             val logPass = viewModel.getByLogin(userName, password)
-            if (logPass != null){
+            if (logPass != null) {
                 binding.button.setLoading(true)
                 navigator.open(R.id.profileFragment)
             }
@@ -43,7 +43,7 @@ class LoginFragment : BaseFragment<FragmentLoginBinding>() {
 
     private fun loginListener() {
         binding.signUpTextButton.setOnClickListener {
-                navigator.open(R.id.registrationFragment)
+            navigator.open(R.id.registrationFragment)
         }
     }
 
@@ -54,9 +54,8 @@ class LoginFragment : BaseFragment<FragmentLoginBinding>() {
         animationDrawable.start()
     }
 
-    override fun onPause() {
-        super.onPause()
+    override fun onDestroyView() {
+        super.onDestroyView()
         clearBinding()
     }
-
 }

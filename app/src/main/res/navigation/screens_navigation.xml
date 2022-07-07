@@ -14,6 +14,7 @@
             android:id="@+id/action_homeFragment_to_loginFragment"
             app:destination="@id/loginFragment" />
     </fragment>
+
     <fragment
         android:id="@+id/loginFragment"
         android:name="com.example.checkinghomework.ui.screens.login.LoginFragment"
@@ -26,15 +27,30 @@
             android:id="@+id/action_loginFragment_to_profileFragment"
             app:destination="@id/profileFragment" />
     </fragment>
+
     <fragment
         android:id="@+id/registrationFragment"
-        tools:layout="@layout/fragment_registration"
         android:name="com.example.checkinghomework.ui.screens.registration.RegistrationFragment"
-        android:label="RegistrationFragment" />
+        android:label="RegistrationFragment"
+        tools:layout="@layout/fragment_registration" />
+
     <fragment
         android:id="@+id/profileFragment"
         android:name="com.example.checkinghomework.ui.screens.profile.ProfileFragment"
         android:label="ProfileFragment"
-        tools:layout="@layout/fragment_profile"/>
+        tools:layout="@layout/fragment_profile">
+        <action
+            android:id="@+id/action_profileFragment_to_articleBottomFragment"
+            app:destination="@id/articleBottomFragment" />
+    </fragment>
+
+    <dialog
+        android:id="@+id/articleBottomFragment"
+        android:name="com.example.checkinghomework.ui.screens.article.ArticleBottomFragment"
+        android:label="ArticleBottomFragment">
+        <argument
+            android:name="articleModel"
+            app:argType="com.example.checkinghomework.model.ArticleModel" />
+    </dialog>
 
 </navigation>

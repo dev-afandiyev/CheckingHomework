@@ -1,18 +1,17 @@
 package com.example.checkinghomework.ui.screens.news
 
 import android.os.Bundle
-import android.view.MotionEvent
 import android.view.View
-import android.view.View.OnTouchListener
-import android.widget.Toolbar
+import android.widget.Toast
 import androidx.fragment.app.viewModels
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.checkinghomework.databinding.FragmentNewsBinding
 import com.example.checkinghomework.ui.screens.base.BaseFragment
 import com.example.checkinghomework.ui.screens.news.adapter.NewsAdapter
+import com.example.checkinghomework.ui.screens.profile.ProfileFragmentDirections
 import com.example.checkinghomework.viewmodel.NewsViewModel
 import dagger.hilt.android.AndroidEntryPoint
-
 
 @AndroidEntryPoint
 class NewsFragment : BaseFragment<FragmentNewsBinding>() {
@@ -46,14 +45,14 @@ class NewsFragment : BaseFragment<FragmentNewsBinding>() {
         binding.newsList.adapter = newsAdapter
 
         newsAdapter?.onClickListener {
-
+            navigator.open(ProfileFragmentDirections.actionProfileFragmentToArticleBottomFragment(it))
         }
     }
 
-    override fun onPause() {
-        super.onPause()
-        newsAdapter = null
+    override fun onDestroyView() {
+        super.onDestroyView()
         clearBinding()
+        newsAdapter = null
     }
 
 }

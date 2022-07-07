@@ -12,10 +12,10 @@ import com.example.checkinghomework.model.ArticleModel
 class NewsAdapter : RecyclerView.Adapter<NewsAdapter.ViewHolder>() {
 
     private var list = mutableListOf<ArticleModel>()
-    private var onClickListener: (Int) -> Unit = {}
+    private var onClickListener: (ArticleModel) -> Unit = {}
 
-    fun onClickListener(position: (Int) -> Unit) {
-        onClickListener = position
+    fun onClickListener(item: (ArticleModel) -> Unit) {
+        onClickListener = item
     }
 
     @SuppressLint("NotifyDataSetChanged")
@@ -51,7 +51,7 @@ class NewsAdapter : RecyclerView.Adapter<NewsAdapter.ViewHolder>() {
         holder.bind(list[position])
 
         holder.itemView.setOnClickListener {
-            onClickListener(position)
+            onClickListener(list[position])
         }
     }
 

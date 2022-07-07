@@ -14,8 +14,7 @@ class CustomAlertDialog @Inject constructor() {
 
     fun showDialog(fragment: Fragment) {
         binding = DialogLayoutBinding.inflate(fragment.layoutInflater)
-        val view = binding.root
-        initDialog(fragment, view)
+        initDialog(fragment, binding.root)
         initListener()
 
         dialog?.show()

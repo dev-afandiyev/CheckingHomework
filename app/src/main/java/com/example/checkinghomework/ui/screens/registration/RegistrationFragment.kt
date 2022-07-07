@@ -52,8 +52,8 @@ class RegistrationFragment : BaseFragment<FragmentRegistrationBinding>() {
         animationDrawable.start()
     }
 
-    override fun onPause() {
-        super.onPause()
+    override fun onDestroyView() {
+        super.onDestroyView()
         clearBinding()
     }
 

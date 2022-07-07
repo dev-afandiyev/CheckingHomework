@@ -1,6 +1,7 @@
 package com.example.checkinghomework.navigation
 
 import androidx.navigation.NavController
+import androidx.navigation.NavDirections
 import androidx.navigation.NavOptions
 import com.example.checkinghomework.R
 import javax.inject.Inject
@@ -26,6 +27,14 @@ class Navigator @Inject constructor() : INavigator {
     override fun open(screen: Int) {
         try {
             navController?.navigate(screen, null, navOptions)
+        } catch (ex: IllegalArgumentException) {
+            ex.printStackTrace()
+        }
+    }
+
+    override fun open(navDirections: NavDirections) {
+        try {
+            navController?.navigate(navDirections)
         } catch (ex: IllegalArgumentException) {
             ex.printStackTrace()
         }

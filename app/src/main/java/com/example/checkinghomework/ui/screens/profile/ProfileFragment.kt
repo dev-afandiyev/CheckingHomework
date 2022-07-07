@@ -20,11 +20,12 @@ import javax.inject.Inject
 @AndroidEntryPoint
 class ProfileFragment : BaseFragment<FragmentProfileBinding>() {
 
+    @Inject
+    lateinit var alert: CustomAlertDialog
+    private val viewModel: ProfileViewModel by viewModels()
+
     override fun getViewBinding(): FragmentProfileBinding =
         FragmentProfileBinding.inflate(layoutInflater)
-
-    private val viewModel: ProfileViewModel by viewModels()
-    @Inject lateinit var alert: CustomAlertDialog
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -100,9 +101,14 @@ class ProfileFragment : BaseFragment<FragmentProfileBinding>() {
     private fun setViewPager() {
         binding.viewPager.adapter =
             ViewPagerAdapter(
-                requireActivity().supportFragmentManager,
+                childFragmentManager,
                 lifecycle
             )
+    }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        clearBinding()
     }
 
 }

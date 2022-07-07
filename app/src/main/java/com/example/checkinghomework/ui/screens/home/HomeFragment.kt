@@ -19,10 +19,10 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         setupAnimation()
-        Handler(Looper.getMainLooper()).postDelayed({
-            binding.progressBarCyclic.visibility = View.GONE
-            binding.button.visibility = View.VISIBLE
-        }, 3000)
+//        Handler(Looper.getMainLooper()).postDelayed({
+//            binding.progressBarCyclic.visibility = View.GONE
+//            binding.button.visibility = View.VISIBLE
+//        }, 3000)
 
         binding.button.setOnClickListener {
             binding.button.setLoading(true)
@@ -41,6 +41,11 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>() {
         animationDrawable.setEnterFadeDuration(2500)
         animationDrawable.setExitFadeDuration(5000)
         animationDrawable.start()
+    }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        clearBinding()
     }
 
 }
