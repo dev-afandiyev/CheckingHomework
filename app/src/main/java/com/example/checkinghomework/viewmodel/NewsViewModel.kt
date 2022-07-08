@@ -21,16 +21,14 @@ class NewsViewModel @Inject constructor(
     }
 
     fun apiRequest() {
-        if (newsList.value == null) {
-            val result = interactor.request()
-                .subscribe({
-                    if (it.status == "ok") {
-                        newsList.postValue(it.articles)
-                    }
-                }, {
-                    Log.e("RequestError", it.message.toString())
-                })
-        }
+        addDisposable(interactor.request()
+            .subscribe({
+                if (it.status == "ok") {
+                    newsList.postValue(it.articles)
+                }
+            }, {
+                Log.e("RequestError", it.message.toString())
+            }))
     }
 
 }
