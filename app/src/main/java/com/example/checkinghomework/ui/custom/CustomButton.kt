@@ -38,10 +38,11 @@ class CustomButton @JvmOverloads constructor(
         val enabled = arr.getBoolean(R.styleable.CustomButton_enabled, true)
 
         arr.recycle()
+
         isEnabled = enabled
         buttonTextView.isEnabled = enabled
-        setText(buttonText)
 
+        setText(buttonText)
         setLoading(loading)
     }
 

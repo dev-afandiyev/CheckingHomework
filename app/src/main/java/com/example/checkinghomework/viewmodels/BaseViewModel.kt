@@ -1,4 +1,4 @@
-package com.example.checkinghomework.viewmodel
+package com.example.checkinghomework.viewmodels
 
 import androidx.lifecycle.ViewModel
 import io.reactivex.disposables.CompositeDisposable

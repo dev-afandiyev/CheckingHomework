@@ -1,4 +1,4 @@
-package com.example.checkinghomework.viewmodel
+package com.example.checkinghomework.viewmodels
 
 import androidx.lifecycle.MutableLiveData
 import com.example.checkinghomework.domain.login.LoginInteractor

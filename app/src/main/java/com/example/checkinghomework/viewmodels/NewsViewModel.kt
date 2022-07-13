@@ -1,9 +1,8 @@
-package com.example.checkinghomework.viewmodel
+package com.example.checkinghomework.viewmodels
 
 import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
-import com.example.checkinghomework.data.repository.news.NewsRepository
 import com.example.checkinghomework.domain.NewsInteractor
 import com.example.checkinghomework.model.ArticleModel
 import dagger.hilt.android.lifecycle.HiltViewModel

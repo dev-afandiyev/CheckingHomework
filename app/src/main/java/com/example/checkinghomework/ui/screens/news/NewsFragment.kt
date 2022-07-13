@@ -2,15 +2,13 @@ package com.example.checkinghomework.ui.screens.news
 
 import android.os.Bundle
 import android.view.View
-import android.widget.Toast
 import androidx.fragment.app.viewModels
-import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.checkinghomework.databinding.FragmentNewsBinding
 import com.example.checkinghomework.ui.screens.base.BaseFragment
 import com.example.checkinghomework.ui.screens.news.adapter.NewsAdapter
 import com.example.checkinghomework.ui.screens.profile.ProfileFragmentDirections
-import com.example.checkinghomework.viewmodel.NewsViewModel
+import com.example.checkinghomework.viewmodels.NewsViewModel
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint

@@ -13,7 +13,7 @@ import com.example.checkinghomework.ui.activity.MainActivity
 import com.example.checkinghomework.ui.custom.CustomAlertDialog
 import com.example.checkinghomework.ui.screens.base.BaseFragment
 import com.example.checkinghomework.ui.screens.profile.viewpager.ViewPagerAdapter
-import com.example.checkinghomework.viewmodel.ProfileViewModel
+import com.example.checkinghomework.viewmodels.ProfileViewModel
 import com.google.android.material.tabs.TabLayoutMediator
 import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
@@ -40,7 +40,8 @@ class ProfileFragment : BaseFragment<FragmentProfileBinding>() {
     }
 
     private fun setDrawerEdgeSize() {
-        val mDragField = binding.drawer
+        val mDragField = binding
+            .drawer
             .javaClass
             .getDeclaredField("mLeftDragger")
             .also { it.isAccessible = true }
@@ -105,16 +106,16 @@ class ProfileFragment : BaseFragment<FragmentProfileBinding>() {
     private fun setToolbar() {
         (requireActivity() as MainActivity).setSupportActionBar(binding.toolbar)
 
-        val toggle = ActionBarDrawerToggle(
+        ActionBarDrawerToggle(
             requireActivity(),
             binding.drawer,
             binding.toolbar,
             R.string.navigation_drawer_open,
             R.string.navigation_drawer_close
-        )
-
-        binding.drawer.addDrawerListener(toggle)
-        toggle.syncState()
+        ).also {
+            binding.drawer.addDrawerListener(it)
+            it.syncState()
+        }
     }
 
     private fun setViewPager() {
@@ -124,6 +125,7 @@ class ProfileFragment : BaseFragment<FragmentProfileBinding>() {
 
     override fun onDestroyView() {
         super.onDestroyView()
+        binding.viewPager.adapter = null
         clearBinding()
     }
 

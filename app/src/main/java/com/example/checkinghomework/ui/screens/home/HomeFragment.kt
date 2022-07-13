@@ -2,16 +2,19 @@ package com.example.checkinghomework.ui.screens.home
 
 import android.graphics.drawable.AnimationDrawable
 import android.os.Bundle
-import android.os.Handler
-import android.os.Looper
 import android.view.View
+import androidx.fragment.app.viewModels
 import com.example.checkinghomework.R
 import com.example.checkinghomework.databinding.FragmentHomeBinding
 import com.example.checkinghomework.ui.screens.base.BaseFragment
+import com.example.checkinghomework.ui.screens.home.viewpager.HomeViewPagerAdapter
+import com.example.checkinghomework.viewmodels.HomeViewModel
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
 class HomeFragment : BaseFragment<FragmentHomeBinding>() {
+
+    private val viewModel: HomeViewModel by viewModels()
 
     override fun getViewBinding(): FragmentHomeBinding =
         FragmentHomeBinding.inflate(layoutInflater)
@@ -19,21 +22,29 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         setupAnimation()
-//        Handler(Looper.getMainLooper()).postDelayed({
-//            binding.progressBarCyclic.visibility = View.GONE
-//            binding.button.visibility = View.VISIBLE
-//        }, 3000)
+        setViewPager()
+        checkUserData()
+    }
 
-        binding.button.setOnClickListener {
-            binding.button.setLoading(true)
-            navigator.open(R.id.loginFragment)
+    private fun checkUserData() {
+        viewModel.getAllItem()?.observe(viewLifecycleOwner) {
+            it?.let {
+                if (it.username.isEmpty()) pagerNextItem() else
+                    navigator.open(R.id.profileFragment)
+            } ?: run { pagerNextItem() }
         }
     }
 
-    override fun onResume() {
-        super.onResume()
-        binding.progressBarCyclic.visibility = View.VISIBLE
-        binding.button.visibility = View.GONE
+    private fun pagerNextItem() {
+        binding.homeViewPager.let {
+            it.currentItem = it.currentItem + 1
+        }
+    }
+
+    private fun setViewPager() {
+        binding.homeViewPager.isUserInputEnabled = false
+        binding.homeViewPager.adapter =
+            HomeViewPagerAdapter(childFragmentManager, viewLifecycleOwner.lifecycle)
     }
 
     private fun setupAnimation() {

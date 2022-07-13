@@ -1,4 +1,4 @@
-package com.example.checkinghomework.viewmodel
+package com.example.checkinghomework.viewmodels
 
 import androidx.lifecycle.LiveData
 import com.example.checkinghomework.domain.main.MainInteractor
@@ -7,7 +7,7 @@ import dagger.hilt.android.lifecycle.HiltViewModel
 import javax.inject.Inject
 
 @HiltViewModel
-class MainViewModel@Inject constructor(
+class HomeViewModel@Inject constructor(
     private var mainInteractor: MainInteractor
 ) : BaseViewModel() {
 

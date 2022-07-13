@@ -7,7 +7,7 @@ import androidx.fragment.app.viewModels
 import com.example.checkinghomework.R
 import com.example.checkinghomework.databinding.FragmentLoginBinding
 import com.example.checkinghomework.ui.screens.base.BaseFragment
-import com.example.checkinghomework.viewmodel.LoginViewModel
+import com.example.checkinghomework.viewmodels.LoginViewModel
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
